@@ -1,6 +1,6 @@
 body {
     background: url("https://image.freepik.com/free-vector/ice-cream-pattern-background_1344-46.jpg");
-    font-family: 'Knewave', cursive;
+    font-family: 'Chela One', cursive;
 }
 
 #container {
@@ -16,7 +16,7 @@ body {
 .treat{
     border: solid pink 3px;
     margin: 10px;
-    font-family: 'Knewave', cursive;
+    font-family: 'Chela One', cursive;
     font-size: 20px;
 }
 
@@ -24,7 +24,7 @@ h1 {
     background: mintcream;
     border: solid pink 5px;
     font-size: 50px;
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Chela One', cursive;
 }
 
 img {
