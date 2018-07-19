@@ -1,3 +1,12 @@
+body {
+    background: url("https://i.pinimg.com/originals/56/ae/67/56ae67807da10fd230114b65823f8282.jpg")
+}
+
 #container {
-    background: url("http://fc04.deviantart.net/fs70/f/2013/169/2/a/sweet_heart___custom_box_background_by_r0se_designs-d4gjvg7.png")
+    margin-left: 20%;
+    margin-right: 20%;
+
+    padding: 10%;
+    background: url("https://s-media-cache-ak0.pinimg.com/originals/8c/d0/16/8cd016ca91920d43bcd14fbb40d89fcd.jpg")
+    
 }
