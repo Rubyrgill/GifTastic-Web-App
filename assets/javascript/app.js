@@ -33,7 +33,7 @@ $(document).ready(function () {
         var sweet = $(this).attr("data-name");
         var apiKey = "WDYt2fJ2U5xULEOYfSUWcwiDpRWR0EyX";
         var limitOf = 10;
-        var fullUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + sweet + "&limit=" + limitOf + "&offset=0&rating=G&lang=en";
+        var fullUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + sweet + "&limit=" + limitOf + "&offset=0&lang=en";
 
         //Ajax linked
         $.ajax({
@@ -52,14 +52,11 @@ $(document).ready(function () {
                 var showTreat = $("<img>");
                 //pull the images held in API object
                 showTreat.attr('src', results[i].images.fixed_height_still.url);
-                //identify rating
-                showTreat.attr('title', "Rating: " + results[i].rating);
-                //pull still image
-                showTreat.attr('data-still', results[i].images.fixed_height_still.url);
-                showTreat.attr('data-still', 'still')
+                showTreat.attr("data-still", results[i].images.fixed_height_still.url);
+                showTreat.attr('data-animate', results[i].images.fixed_height.url);
+                showTreat.attr("data-state", "still");
                 //add class to gif image
                 showTreat.addClass('gif');
-                showTreat.attr('data-animate', results[i].images.fixed_height.url);
                 //add to html
                 gifDiv.append(showTreat)
 
