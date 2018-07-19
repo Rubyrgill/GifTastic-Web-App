@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     //GLOBAL VARIABLES 
     //_____________________________________________
-    var topics = ["Cake", "Berries", "Donuts", "Milkshakes"];
+    var topics = ["Ice Cream", "Cupcakes", "Donuts", "Milkshakes", "Apples"];
 
 
     //FUNCTIONS
