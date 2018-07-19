@@ -60,7 +60,13 @@ $(document).ready(function () {
                 //add to html
                 gifDiv.append(showTreat)
 
+                var rating = results[i].rating;
+
+                var gifRating = $("<p>").text("Rating: " + rating);
+                gifDiv.append(gifRating)
+
                 $("#images").prepend(gifDiv);
+
             }
         })
 
