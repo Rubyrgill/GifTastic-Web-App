@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     //GLOBAL VARIABLES 
     //_____________________________________________
-    var sweetsOptions = ["Cake", "Berries", "Donuts", "Milkshakes"];
+    var topics = ["Cake", "Berries", "Donuts", "Milkshakes"];
 
 
     //FUNCTIONS
@@ -14,12 +14,12 @@ $(document).ready(function () {
         $("#button").empty();
 
         //loop through array, and append to html
-        for (var i = 0; i < sweetsOptions.length; i++) {
+        for (var i = 0; i < topics.length; i++) {
             //adding a button for each array option, and adding class, text and attr
             var sOption = $("<button>")
             sOption.addClass("treat");
-            sOption.attr("data-name", sweetsOptions[i]);
-            sOption.text(sweetsOptions[i]);
+            sOption.attr("data-name", topics[i]);
+            sOption.text(topics[i]);
             //adding to html
             $("#button").append(sOption);
         }
@@ -29,6 +29,7 @@ $(document).ready(function () {
     //To display gifs 
 
     function showGifs() {
+        //api url and api key held in var
         var sweet = $(this).attr("data-name");
         var apiKey = "WDYt2fJ2U5xULEOYfSUWcwiDpRWR0EyX";
         var limitOf = 10;
@@ -46,14 +47,20 @@ $(document).ready(function () {
 
             //loop through each gif 
             for (var i = 0; i < results.length; i++) {
+                //create div, with class and set to img
                 var gifDiv = $("<div class=treats>");
                 var showTreat = $("<img>");
+                //pull the images held in API object
                 showTreat.attr('src', results[i].images.fixed_height_still.url);
+                //identify rating
                 showTreat.attr('title', "Rating: " + results[i].rating);
+                //pull still image
                 showTreat.attr('data-still', results[i].images.fixed_height_still.url);
                 showTreat.attr('data-still', 'still')
+                //add class to gif image
                 showTreat.addClass('gif');
                 showTreat.attr('data-animate', results[i].images.fixed_height.url);
+                //add to html
                 gifDiv.append(showTreat)
 
                 $("#images").prepend(gifDiv);
@@ -62,19 +69,26 @@ $(document).ready(function () {
 
     }
 
-
+    //Animate gif images 
+    $(document).on('click', '.gif', function () {
+        var state = $(this).attr('data-state');
+        if (state == 'still') {
+            $(this).attr('src', $(this).data('animate'));
+            $(this).attr('data-state', 'animate');
+        } else {
+            $(this).attr('src', $(this).data('still'));
+            $(this).attr('data-state', 'still');
+        }
+    })
 
 
 
     //PROCESSES 
     //_________________________________________________
 
-    //calling button function to check 
+    //calling the functions on click
     createButton();
-
     $(document).on("click", ".treat", showGifs);
-
-
 
 
 })
