@@ -1,12 +1,19 @@
 body {
-    background: url("https://i.pinimg.com/originals/56/ae/67/56ae67807da10fd230114b65823f8282.jpg")
+    background: url("https://i.pinimg.com/originals/56/ae/67/56ae67807da10fd230114b65823f8282.jpg");
+    font-family: 'Knewave', cursive;
 }
 
 #container {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    padding: 2px;
+    background: url("https://s-media-cache-ak0.pinimg.com/originals/8c/d0/16/8cd016ca91920d43bcd14fbb40d89fcd.jpg");
+}
 
-    padding: 10%;
-    background: url("https://s-media-cache-ak0.pinimg.com/originals/8c/d0/16/8cd016ca91920d43bcd14fbb40d89fcd.jpg")
-    
+.treat{
+    border: solid pink 3px;
+    margin: 10px;
+    font-family: 'Knewave', cursive;
+    font-size: 15px;
 }
