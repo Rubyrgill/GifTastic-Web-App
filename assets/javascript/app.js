@@ -95,9 +95,13 @@ $(document).ready(function () {
         var sweet = $("#userinput").val().trim();
         //push into topic array
         topics.push(sweet)
+        //resets the input to empty for new 
+        form.reset();
         //call function to create button
         createButton()
 
+        //enter
+        return false;
     })
 
 
