@@ -29,10 +29,10 @@ $(document).ready(function () {
     //To display gifs 
 
     function showGifs() {
-        var inputOption = $(this).attr("data-name");
+        var sweet = $(this).attr("data-name");
         var apiKey = "WDYt2fJ2U5xULEOYfSUWcwiDpRWR0EyX";
         var limitOf = 10;
-        var fullUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + inputOption + "&limit=" + limitOf + "&offset=0&rating=G&lang=en";
+        var fullUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + sweet + "&limit=" + limitOf + "&offset=0&rating=G&lang=en";
 
         //Ajax linked
         $.ajax({
@@ -70,9 +70,9 @@ $(document).ready(function () {
     //_________________________________________________
 
     //calling button function to check 
-    createButton()
-    showGifs()
+    createButton();
 
+    $(document).on("click", ".treat", showGifs);
 
 
 
