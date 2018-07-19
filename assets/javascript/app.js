@@ -23,11 +23,11 @@ $(document).ready(function () {
             //adding to html
             $("#button").append(sOption);
         }
+
     }
 
 
     //To display gifs 
-
     function showGifs() {
         //api url and api key held in var
         var sweet = $(this).attr("data-name");
@@ -60,8 +60,9 @@ $(document).ready(function () {
                 //add to html
                 gifDiv.append(showTreat)
 
+                //set rating variable 
                 var rating = results[i].rating;
-
+                //add p tag, and stor rating in then append to html
                 var gifRating = $("<p>").text("Rating: " + rating);
                 gifDiv.append(gifRating)
 
@@ -74,10 +75,13 @@ $(document).ready(function () {
 
     //Animate gif images 
     $(document).on('click', '.gif', function () {
+
         var state = $(this).attr('data-state');
+        //if the image is still, then animate the image src, and change attr state to animate 
         if (state == 'still') {
             $(this).attr('src', $(this).data('animate'));
             $(this).attr('data-state', 'animate');
+            //otherwise, switch it to still
         } else {
             $(this).attr('src', $(this).data('still'));
             $(this).attr('data-state', 'still');
@@ -85,13 +89,26 @@ $(document).ready(function () {
     })
 
 
+    //add a new button for gif topic
+    $("#submitButton").on("click", function () {
+        //store input in var
+        var sweet = $("#userinput").val().trim();
+        //push into topic array
+        topics.push(sweet)
+        //call function to create button
+        createButton()
+
+    })
+
 
     //PROCESSES 
     //_________________________________________________
 
     //calling the functions on click
-    createButton();
+
     $(document).on("click", ".treat", showGifs);
+
+    createButton()
 
 
 })
