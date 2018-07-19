@@ -29,6 +29,7 @@ $(document).ready(function () {
 
     //To display gifs 
     function showGifs() {
+        $('#images').empty();
         //api url and api key held in var
         var sweet = $(this).attr("data-name");
         var apiKey = "WDYt2fJ2U5xULEOYfSUWcwiDpRWR0EyX";
@@ -42,7 +43,6 @@ $(document).ready(function () {
         }).done(function (response) {
             //checking to see if link is connected 
             console.log(response.data);
-
             var results = response.data;
 
             //loop through each gif 
@@ -111,6 +111,7 @@ $(document).ready(function () {
     //calling the functions on click
 
     $(document).on("click", ".treat", showGifs);
+
 
     createButton()
 
