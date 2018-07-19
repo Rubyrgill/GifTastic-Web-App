@@ -4,17 +4,25 @@
 
 ### OBJECTIVE:
 ```
-Web Application Using API
+  - On click web application pulls related gifs from Giphy and displays on screen
+  - User has option to add their own topic to buttons, and generate gifs in relation to input
 ```
 
 ### KEY FEATURES:
 ```
-Grabs gif images related to buttons
+  - Application pulls 10 gifs from Giphy link in relation to the button value clicked (e.g. Donuts) 
+  - User can enter their own topic in form, and submit to create button that will display gifs. 
+  - Gifs are 'still' until clicked, then animate. 
+  - If gif animated, then user can click image again to pause
 ```
 
 ### TOOLS/PROGRAMS USED: 
 ```
-placeholder
+  - API 
+  - JQuery/Javascript 
+  - HTML/CSS 
+  - GoogleFonts 
+  - Giphy
 ```
 
 
